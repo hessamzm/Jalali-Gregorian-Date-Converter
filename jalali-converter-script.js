@@ -3,33 +3,34 @@ const jalaali = {
   isLeapJalaaliYear: function(jy) {
     return this.jalaaliLeap(jy) === 0;
   },
-  jalaaliLeap: function(jy) {
-    let breaks = [-61,9,38,199,426,686,756,818,1111,1181,1210,
-    1635,2060,2097,2192,2262,2324,2394,2456,3178];
-    let bl = breaks.length;
-    let gy = jy + 621;
-    let leapJ = -14;
-    let jp = breaks[0];
-    let jm, jump, leap, n, i;
-    if (jy < jp || jy >= breaks[bl-1])
-      throw new Error('Invalid Jalaali year ' + jy);
-    for (i=1; i < bl; i+=1) {
-      jm = breaks[i];
-      jump = jm - jp;
-      if (jy < jm)
-        break;
-      leapJ = leapJ + parseInt(jump/33)*8 + parseInt((jump%33)/4);
-      jp = jm;
-    }
-    n = jy - jp;
-    leapJ = leapJ + parseInt(n/33)*8 + parseInt(((n%33)+3)/4);
-    if ((jump % 33) === 4 && jump - n === 4)
-      leapJ += 1;
-    let leap = (((leapJ + 1) % 33) - 1);
-    if (leap === -1)
-      leap = 32;
-    return leap;
-  },
+jalaaliLeap: function(jy) {
+  let breaks = [-61,9,38,199,426,686,756,818,1111,1181,1210,
+  1635,2060,2097,2192,2262,2324,2394,2456,3178];
+  let bl = breaks.length;
+  let gy = jy + 621;
+  let leapJ = -14;
+  let jp = breaks[0];
+  let jm, jump, n, i;
+  if (jy < jp || jy >= breaks[bl-1])
+    throw new Error('Invalid Jalaali year ' + jy);
+  for (i=1; i < bl; i+=1) {
+    jm = breaks[i];
+    jump = jm - jp;
+    if (jy < jm)
+      break;
+    leapJ = leapJ + parseInt(jump/33)*8 + parseInt((jump%33)/4);
+    jp = jm;
+  }
+  n = jy - jp;
+  leapJ = leapJ + parseInt(n/33)*8 + parseInt(((n%33)+3)/4);
+  if ((jump % 33) === 4 && jump - n === 4)
+    leapJ += 1;
+  let leapValue = (((leapJ + 1) % 33) - 1);
+  if (leapValue === -1)
+    leapValue = 32;
+  return leapValue;
+},
+
   toGregorian: function(jy, jm, jd) {
     let gy = jy + 621;
     let leapJ = this.jalaaliLeap(jy);
