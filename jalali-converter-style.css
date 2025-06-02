@@ -1,0 +1,60 @@
+.CustomBox_root__TwLvz.ConvertDate_root__ff7y9.variant_container.color_tertiary {
+  font-family: Tahoma, sans-serif;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #555;
+  direction: rtl;
+}
+.header {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #777;
+}
+label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.date-inputs {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+.date-inputs input {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}
+button {
+  margin-top: 18px;
+  width: 100%;
+  background-color: #3a86ff;
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #1e62d0;
+}
+.result {
+  margin-top: 20px;
+  background-color: #e0e7ff;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  color: #222;
+  min-height: 30px;
+}
