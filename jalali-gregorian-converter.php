@@ -3,8 +3,8 @@
 Plugin Name: Jalali Gregorian Date Converter
 Description: افزونه ساده تبدیل تاریخ شمسی و میلادی با ورودی جداگانه سال، ماه و روز و شورت‌کد [jalali_gregorian_converter]
 Version: 1.0
-Author: hessamzmohammadi@gmail.com
-Author URI: https://github.com/hessamzm/Jalali-Gregorian-Date-Converter
+Author: hessamzm
+Author URI:https://github.com/hessamzm/Jalali-Gregorian-Date-Converter/
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: jalali-gregorian-converter
